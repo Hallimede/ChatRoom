@@ -1,7 +1,7 @@
 body{
     color:#333333;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 320px;
     /* horizontally center */
     margin: 0 auto;  
 }
@@ -14,17 +14,56 @@ body{
 }
 
 header{
+    margin: 15px;
+    padding: 12px;
     height: 150px;
     line-height: 200px;
+    align-items:center;
     /* background-color: #EEEEEE; */
+}
+
+header.chat{
+    height: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* line-height: 40px; */
+    background-color: #A7C4F4;
+    display:flex;
+    justify-content: space-between;
+}
+
+.chathead{
+    font-size: 24px;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: left;
 }
 
 main{
     /* background-color: #EEEEEE; */
     padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 0;
 }
 
-.stitle{
+footer{
+    padding: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 15px;
+    height: 30px;
+    line-height: 200px;
+    display:flex;
+    justify-content: center;
+    background-color: #A7C4F4;
+}
+
+div.post{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+div.stitle{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     display: block;
@@ -42,6 +81,19 @@ input{
     border-style: solid;
     border-color: #333333;
     border-width: 1.5px;
+    box-sizing: border-box;
+}
+
+textarea{
+    font-size: 18px;
+    height: 130px;
+    width: 100%;
+    border-radius: 0%;
+    border-style: solid;
+    border-color: #333333;
+    border-width: 1.5px;
+    box-sizing: border-box;
+    resize: none;
 }
 
 button{
@@ -61,10 +113,6 @@ button.two{
     padding: 0;
 }
 
-div.input{
-    width: 100%;
-}
-
 div.buttons{
     width: 100%;
 }
@@ -72,4 +120,44 @@ div.buttons{
 div.two{
     column-count: 2;
     column-gap: 10px;
+}
+
+div.message{
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #E1E1E1;
+}
+
+div.mtitle{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+div.name{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.time{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.comment{
+    padding-top: 6px;
+    font-size: 18px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+div.list{
+    overflow: scroll;
+    height: 260px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li.item{
+    list-style-type: none;
 }

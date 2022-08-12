@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Chat Room,HTML5,CSS3,FSE">
+    <meta name="description" content="Foundations of Software Engineering Assignment">
+    <meta name="author" content="Yaokang Wu">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>FSE Chat Room</title>
+</head>
+<body>
+    <header class="chat">
+        <div class="chathead">FSE Chat Room</div>
+        <button type="button" style="float: right; background-color: #ECB576;"> Logout </button>
+    </header>
+
+    <main>
+        <!-- <script language="javascript1.2" type="text/javascript">
+            function onGetMessage(context) 
+            {
+                msg.innerHTML+=context;
+                msg_end.scrollIntoView(); 
+            } 
+        </script> -->
+        <div class="list">
+        <ul>
+            <!-- <div id="msg" style="overflow:hidden;width:480px;"></div> -->
+            <li class="item">
+                <div class="message">
+                    <div class="mtitle">
+                        <div class="name"> Hakan</div>
+                        <div class="time"> 0808.2022 11:00AM</div>
+                    </div>
+                    <div class="comment"> Welcome to Foundations of Software Engineering!</div>
+                </div>
+            </li>
+
+            <li class="item">
+                <div class="message">
+                    <div class="mtitle">
+                        <div class="name"> Cécile</div>
+                        <div class="time"> 0808.2022 03:05PM</div>
+                    </div>
+                    <div class="comment"> We look forward to working with you this semester!</div>
+                </div>
+            </li>
+
+            <li class="item">
+                <div class="message">
+                    <div class="mtitle">
+                        <div class="name"> Me</div>
+                        <div class="time"> 0808.2022 04:20PM</div>
+                    </div>
+                    <div class="comment"> See you soon!</div>
+                </div>
+            </li>
+            <!-- <div id="msg_end" style="height:0px; overflow:hidden"></div> -->
+        </ul>
+        </div>
+
+        
+    </main>
+
+    <div class="post">
+        <form>
+            <!-- <form action="welcome.php" method="get"> -->
+                <textarea name="newmessage"></textarea>
+                <footer>
+                <button type="button" style="float: right; background-color: #ECB576;"> Post </button>
+            </footer>
+        </form>
+    </div>
+
+    
+</body>
+</html>
