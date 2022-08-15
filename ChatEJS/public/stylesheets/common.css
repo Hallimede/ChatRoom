@@ -73,7 +73,7 @@ div.stitle{
 
 input{
     display: block;
-    padding: 0px;
+    padding: 0 10px;
     width: 100%;
     height: 32px;
     font-size: 18px;
@@ -158,6 +158,7 @@ ul{
     margin: 0;
     padding: 0;
 }
+
 li.item{
     list-style-type: none;
 }
