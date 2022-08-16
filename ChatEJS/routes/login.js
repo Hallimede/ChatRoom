@@ -15,8 +15,15 @@ router.post('/login', function(req, res, next) {
     db.query("select * from user where username=? and password=?", [username, password], function(err, data){
         if (err) throw err;
         if (data.length > 0) {
+            db.query("select * from comment, user where comment.userid = user.id", function(err, data){
+                if (err) throw err;
+                else{
+                    res.render("chat",{comments:data});
+                }
+            });
+
             // res.writeHead(200, { "Content-Type": "text/html;charset=utf8" });
-            res.render('chat');
+            // res.render('chat');
             // res.end("Login Successfully!");
         }
         else{

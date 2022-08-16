@@ -10,6 +10,14 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>FSE Chat Room</title>
+    <script type="text/javascript">
+
+        function postMsg(){
+            document.form.action = "/postMsg/";
+            document.form.submit();
+        }
+        
+    </script>
 </head>
 <body>
     <div class="top">
@@ -45,16 +53,14 @@
     </div>
 
     <div class="post" >
-        <form>
+        <form name="form" action="/postMsg" method="post">
             <!-- <form action="welcome.php" method="get"> -->
-                <textarea name="newmessage"></textarea>
+                <textarea name="newMsg"></textarea>
                 <footer>
-                <button type="button" style="float: right; background-color: #ECB576;"> Post </button>
+                <button type="submit" style="float: right; background-color: #ECB576;"> Post </button>
             </footer>
         </form>
     </div>
-        
-    
     
 </body>
 </html>
