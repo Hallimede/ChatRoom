@@ -12,12 +12,12 @@
     <title>FSE Chat Room</title>
 </head>
 <body>
-    <header class="chat">
+    <div class="top">
         <div class="chathead">FSE Chat Room</div>
-        <button type="button" style="float: right; background-color: #ECB576;"> Logout </button>
-    </header>
+        <button type="button" style="background-color: #ECB576;"> Logout </button>
+    </div>
 
-    <main>
+    <div class="middle">
         <!-- <script language="javascript1.2" type="text/javascript">
             function onGetMessage(context) 
             {
@@ -26,45 +26,25 @@
             } 
         </script> -->
         <div class="list">
-        <ul>
+            <ul>
             <!-- <div id="msg" style="overflow:hidden;width:480px;"></div> -->
+            <% comments.forEach(function(item){ %>
             <li class="item">
                 <div class="message">
                     <div class="mtitle">
-                        <div class="name"> Hakan</div>
-                        <div class="time"> 0808.2022 11:00AM</div>
+                        <div class="name"><%= item.username %></div>
+                        <div class="time"><%= item.timestamp %></div>
                     </div>
-                    <div class="comment"> Welcome to Foundations of Software Engineering!</div>
+                    <div class="comment"><%= item.content %></div>
                 </div>
             </li>
-
-            <li class="item">
-                <div class="message">
-                    <div class="mtitle">
-                        <div class="name"> Cécile</div>
-                        <div class="time"> 0808.2022 03:05PM</div>
-                    </div>
-                    <div class="comment"> We look forward to working with you this semester!</div>
-                </div>
-            </li>
-
-            <li class="item">
-                <div class="message">
-                    <div class="mtitle">
-                        <div class="name"> Me</div>
-                        <div class="time"> 0808.2022 04:20PM</div>
-                    </div>
-                    <div class="comment"> See you soon!</div>
-                </div>
-            </li>
+        <% }) %>
             <!-- <div id="msg_end" style="height:0px; overflow:hidden"></div> -->
         </ul>
         </div>
+    </div>
 
-        
-    </main>
-
-    <div class="post">
+    <div class="post" >
         <form>
             <!-- <form action="welcome.php" method="get"> -->
                 <textarea name="newmessage"></textarea>
@@ -73,7 +53,8 @@
             </footer>
         </form>
     </div>
-
+        
+    
     
 </body>
 </html>
