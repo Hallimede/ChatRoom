@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,60 +8,111 @@
     <meta name="keywords" content="Chat Room,HTML5,CSS3,FSE">
     <meta name="description" content="Foundations of Software Engineering Assignment">
     <meta name="author" content="Yaokang Wu">
+    <title>FSE Chat Room</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>FSE Chat Room</title>
+    <script type="text/javascript" src="/javascripts/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.cookie-1.4.1.min.js"></script>
     <script type="text/javascript">
-
-        function postMsg(){
-            document.form.action = "/postMsg/";
+        function postMsg() {
+            document.form.action = "/postMsg/"; x
             document.form.submit();
         }
-        
     </script>
 </head>
+
 <body>
+
     <div class="top">
-        <div class="chathead">FSE Chat Room</div>
+        <div id="chathead" class="chathead">FSE Chat Room</div>
         <button type="button" style="background-color: #ECB576;"> Logout </button>
     </div>
 
     <div class="middle">
-        <!-- <script language="javascript1.2" type="text/javascript">
-            function onGetMessage(context) 
-            {
-                msg.innerHTML+=context;
-                msg_end.scrollIntoView(); 
-            } 
-        </script> -->
-        <div class="list">
-            <ul>
-            <!-- <div id="msg" style="overflow:hidden;width:480px;"></div> -->
-            <% comments.forEach(function(item){ %>
-            <li class="item">
-                <div class="message">
-                    <div class="mtitle">
-                        <div class="name"><%= item.username %></div>
-                        <div class="time"><%= item.timestamp %></div>
-                    </div>
-                    <div class="comment"><%= item.content %></div>
-                </div>
-            </li>
-        <% }) %>
-            <!-- <div id="msg_end" style="height:0px; overflow:hidden"></div> -->
-        </ul>
+        <div id="msg-list" class="list">
+            <ul id="messages">
+                <% comments.forEach(function(item){ %>
+                    <li class="item">
+                        <div class="message">
+                            <div class="mtitle">
+                                <div class="name">
+                                    <%= item.username %>
+                                </div>
+                                <div class="time">
+                                    <%= item.time %>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <%= item.content %>
+                            </div>
+                        </div>
+                    </li>
+                    <% }) %>
+            </ul>
         </div>
     </div>
 
-    <div class="post" >
-        <form name="form" action="/postMsg" method="post">
-            <!-- <form action="welcome.php" method="get"> -->
-                <textarea name="newMsg"></textarea>
-                <footer>
+    <div class="post">
+        <form id="post-form">
+            <textarea id="new-msg" name="newMsg"></textarea>
+            <footer>
                 <button type="submit" style="float: right; background-color: #ECB576;"> Post </button>
             </footer>
         </form>
     </div>
     
+
+    <script>
+        function update() {
+            $('.name').each((index, elem) => {
+                console.log($(elem).text());
+                if ($(elem).text().trim() == $.cookie("userName")) {
+                    console.log("same");
+                    $(elem).text("Me");
+                }
+            })
+            $('#msg-list').prop('scrollTop', $('#msg-list')[0].scrollHeight);
+        }
+    </script>
+
+    <!-- <script src="https://cdn.socket.io/4.5.1/socket.io.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        (function () {
+
+            update();
+            
+            //connect
+            const socket = io();
+
+            //check connect
+            if (socket != undefined) {
+                console.log("socket connected");
+            }
+
+            $('#post-form').submit(e => {
+                e.preventDefault();
+                socket.emit('send message', $("#new-msg").val());
+                console.log("(ejs)send message:" + $("#new-msg").val());
+                $('#new-msg').val("");
+            })
+
+            socket.on('new', data => {
+                console.log("recieve new");
+                console.log(data);
+                $('#messages').append("<li class=\"item\"><div class=\"message\"><div class=\"mtitle\"><div class=\"name\">" +
+                    data.username +
+                    "</div><div class=\"time\">" +
+                    data.time +
+                    "</div></div><div class=\"comment\">" +
+                    data.comment +
+                    "</div></div></li>");
+                update();
+                // $('#msg-list').prop('scrollTop', $('#msg-list')[0].scrollHeight);
+            });
+        })();
+    </script>
+
 </body>
+
 </html>

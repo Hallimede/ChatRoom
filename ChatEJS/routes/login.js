@@ -15,6 +15,8 @@ router.post('/login', function(req, res, next) {
     db.query("select * from user where username=? and password=?", [username, password], function(err, data){
         if (err) throw err;
         if (data.length > 0) {
+            res.cookie("userId",data[0].id,{maxAge: 20000, httpOnly: true})
+            res.cookie("userName",username);
             db.query("select * from comment, user where comment.userid = user.id", function(err, data){
                 if (err) throw err;
                 else{
