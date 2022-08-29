@@ -35,6 +35,11 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/register', function(req, res, next) {
+    var val = req.body;
+    var username = val.username;
+    console.log("username:" + username);
+    var password = val.password;
+    console.log("password:" + password);
     db.query("insert into user value (?,?,?)", [0, username, password], function(err, data){
         if (err) throw err;
         res.write("Register successfully!")
