@@ -17,16 +17,7 @@ router.post('/login', function(req, res, next) {
         if (data.length > 0) {
             res.cookie("userId",data[0].id,{maxAge: 20000, httpOnly: true})
             res.cookie("userName",username);
-            db.query("select * from comment, user where comment.userid = user.id", function(err, data){
-                if (err) throw err;
-                else{
-                    res.render("chat",{comments:data});
-                }
-            });
-
-            // res.writeHead(200, { "Content-Type": "text/html;charset=utf8" });
-            // res.render('chat');
-            // res.end("Login Successfully!");
+            res.redirect('/chat');
         }
         else{
             res.end("Login failed");
@@ -42,8 +33,9 @@ router.post('/register', function(req, res, next) {
     console.log("password:" + password);
     db.query("insert into user value (?,?,?)", [0, username, password], function(err, data){
         if (err) throw err;
-        res.write("Register successfully!")
-        res.end();
+        res.redirect('/login');
+        // res.write("Register successfully!")
+        // res.end();
     });
 });
 
