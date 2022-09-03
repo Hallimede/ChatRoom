@@ -162,6 +162,22 @@ button{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+button.login{
+    width: 100%; 
+    background-color: #A7C4F4;
+}
+
+button.logout{
+    width: 88px; 
+    background-color: #ECB576;
+}
+
+button.sub{
+    width: 66px; 
+    float: right;
+    background-color: #ECB576;
+}
+
 button.two{
     width: 100%;
     padding: 0;
