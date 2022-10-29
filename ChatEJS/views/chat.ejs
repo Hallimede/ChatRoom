@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Chat Room,HTML5,CSS3,FSE">
     <meta name="description" content="Foundations of Software Engineering Assignment">
     <meta name="author" content="Yaokang Wu">
     <title>FSE Chat Room</title>
@@ -19,7 +18,7 @@
 
     <div class="top">
         <div id="chathead" class="chathead">FSE Chat Room</div>
-        <button type="button" class="logout" onclick= "window.location.href=/login/"> Logout </button>
+        <button type="button" class="logout" onclick="window.location.href=/login/"> Logout </button>
     </div>
 
     <div class="middle">
@@ -54,7 +53,6 @@
             </footer>
         </form>
     </div>
-    
 
     <script>
         function update() {
@@ -75,7 +73,7 @@
         (function () {
 
             update();
-            
+
             //connect
             const socket = io();
 
@@ -102,7 +100,6 @@
                     data.comment +
                     "</div></div></li>");
                 update();
-                // $('#msg-list').prop('scrollTop', $('#msg-list')[0].scrollHeight);
             });
         })();
     </script>

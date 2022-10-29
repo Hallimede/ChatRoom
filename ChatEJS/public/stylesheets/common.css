@@ -1,73 +1,58 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
-        margin: 0 auto;  
+html {
+    margin: 0 auto;
 }
 
-body{
-    color:#333333;
+body {
+    color: #333333;
     height: 100%;
-    /* max-width: 360px;
-    min-width: 360px; */
-    /* max-width: 320px;
-    min-width: 220px; */
     margin: 0 auto;
     overflow: hidden;
-
-    
-    /* horizontally center */
-    /* margin: 0 auto;   */
 }
 
-main{
+main {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.heading{
+.heading {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-header{
-
+header {
     margin: 15px;
     padding: 12px;
     height: 150px;
     line-height: 200px;
     align-items: center;
-    /* background-color: #EEEEEE; */
 }
 
-header.chat{
+header.chat {
     width: 100%;
     top: 0;
-    position : absolute;
+    position: absolute;
     height: 30px;
-    /* padding-top: 8px;
-    padding-bottom: 8px; */
-    /* line-height: 40px; */
     background-color: #A7C4F4;
     display: flex;
     justify-content: space-between;
 }
 
-.top, .middle, .post{
-    /* max-width: 360px;
-    min-width: 20px; */
-    /* padding-left: 12px;
-    padding-right: 12px; */
-    margin: 0 auto;  
+.top,
+.middle,
+.post {
+    margin: 0 auto;
     left: 15px;
     right: 15px;
 }
 
-.top{
+.top {
     position: absolute;
     padding: 10px;
     top: 20px;
@@ -77,24 +62,20 @@ header.chat{
     justify-content: space-between;
 }
 
-.chathead{
+.chathead {
     font-size: 24px;
     font-weight: bold;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: inline;
-    /* float: left; */
 }
 
-.middle{
-    /* padding: 15px;
-    padding-top: 10px;
-    padding-bottom: 0; */
+.middle {
     position: absolute;
     top: 85px;
     bottom: 220px;
 }
 
-footer{
+footer {
     padding: 12px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -106,7 +87,7 @@ footer{
     background-color: #A7C4F4;
 }
 
-.post{
+.post {
     height: 180px;
     position: absolute;
     bottom: 10px;
@@ -115,7 +96,7 @@ footer{
 }
 
 
-div.stitle{
+div.stitle {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     display: block;
@@ -123,7 +104,7 @@ div.stitle{
     padding-bottom: 4px;
 }
 
-input{
+input {
     display: block;
     padding: 0 10px;
     width: 100%;
@@ -136,7 +117,7 @@ input{
     box-sizing: border-box;
 }
 
-textarea{
+textarea {
     font-size: 18px;
     height: 130px;
     width: 100%;
@@ -150,10 +131,10 @@ textarea{
     padding: 4px;
 }
 
-button{
+button {
     font-size: 20px;
     font-weight: bold;
-    color:#333333;
+    color: #333333;
     height: 32px;
     border-radius: 3px;
     border-style: solid;
@@ -162,76 +143,76 @@ button{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-button.login{
-    width: 100%; 
+button.login {
+    width: 100%;
     background-color: #A7C4F4;
 }
 
-button.logout{
-    width: 88px; 
+button.logout {
+    width: 88px;
     background-color: #ECB576;
 }
 
-button.sub{
-    width: 66px; 
+button.sub {
+    width: 66px;
     float: right;
     background-color: #ECB576;
 }
 
-button.two{
+button.two {
     width: 100%;
     padding: 0;
 }
 
-div.buttons{
+div.buttons {
     width: 100%;
 }
 
-div.two{
+div.two {
     column-count: 2;
     column-gap: 10px;
 }
 
-div.message{
+div.message {
     padding: 12px;
     margin-bottom: 10px;
     background-color: #E1E1E1;
 }
 
 
-div.mtitle{
-    display:flex;
+div.mtitle {
+    display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
 }
 
-div.name{
+div.name {
     font-size: 20px;
     font-weight: bold;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-div.time{
+div.time {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-div.comment{
+div.comment {
     padding-top: 6px;
     font-size: 18px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-div.list{
-    overflow: scroll;
-    height: 100%;
-    /* height: ; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-ul{
+div.list {
+    overflow: scroll;
+    height: 100%;
+}
+
+ul {
     margin: 0;
     padding: 0;
 }
 
-li.item{
+li.item {
     list-style-type: none;
 }

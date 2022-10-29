@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Chat Room,HTML5,CSS3,FSE">
     <meta name="description" content="Foundations of Software Engineering Assignment">
     <meta name="author" content="Yaokang Wu">
     <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
@@ -12,40 +12,42 @@
     <title>FSE Chat Room Login</title>
     <script type="text/javascript">
 
-        function login(){
+        function login() {
             document.form.action = "/login/login";
             document.form.submit();
         }
-        
-        function register(){
+
+        function register() {
             document.form.action = "/login/register";
             document.form.submit();
         }
-   
+
     </script>
 </head>
+
 <body>
     <header>
         <div class="heading">FSE Chat Room</div>
     </header>
     <main>
-            <form name="form" method="post">
-                <div class="stitle"> Username </div>
-                <input type="text" name="username" ><br>
-                <div class="stitle"> Password </div>
-                <input type="password" name="password"><br><br>
+        <form name="form" method="post">
+            <div class="stitle"> Username </div>
+            <input type="text" name="username"><br>
+            <div class="stitle"> Password </div>
+            <input type="password" name="password"><br><br>
 
-                <div class="two">
-                    <div class="buttons">
-                        <button type="button" class="login" onclick= "login()"> Login </button>
-                    </div>
-                    <div class="buttons">
-                        <button type="button" class="login" onclick= "register()"> Register </btton>
-                    </div>
+            <div class="two">
+                <div class="buttons">
+                    <button type="button" class="login" onclick="login()"> Login </button>
                 </div>
-                
-            </form>
+                <div class="buttons">
+                    <button type="button" class="login" onclick="register()"> Register </btton>
+                </div>
+            </div>
+
+        </form>
     </main>
 
 </body>
+
 </html>
